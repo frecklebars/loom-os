@@ -1,0 +1,51 @@
+body::before{ 
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(20, 20, 20, 0) 66%, rgba(0, 0, 0, 0.20) 33%);
+    background-size: 100% 3px;
+    z-index: 9999;
+    pointer-events: none;
+    
+    animation: scanlines-anim 0.7s linear infinite;
+}
+
+@keyframes scanlines-anim{
+    0% {
+		background-position: 0px 0px;
+	}
+	100% {
+        background-position: 0px 9px;
+	}
+}
+
+@media only screen and (orientation: portrait){
+
+    .navbar{
+        font-size: 0.6em;
+    }
+
+    body{
+        font-size: 32px;
+    }
+    
+    a {
+        padding: 20px 30px;
+    }
+
+    input[type=text]{
+        padding: 20px;
+        font-size: 1em;
+
+        width: auto;
+    }
+
+    /********* scanlines **********/
+    body::before{
+        background-size: 100% 4px;
+    }
+}
