@@ -35,8 +35,19 @@ function openWindow(title, link=""){
 
         $("#env").append(newWin);
 
+        $(".window").css("z-index", "900");
+        $(newWin).css("z-index", "1000");
+
+
+        topPos = -100 - 550 * (windowsIdCnt-1) + 30 * (windowsIdCnt-1);
+        leftPos = 400 + 30 * (windowsIdCnt-1);
+
+        $(newWin).css("top", topPos);
+        $(newWin).css("left", leftPos);
+
         $(newWin).draggable({
-            handle: ".windowbar"
+            handle: ".windowbar",
+            scroll: false
         });
 
         $(newWin).mousedown(function(){
