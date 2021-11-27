@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="/style/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style/style.css">
+
     <link rel="stylesheet" href="style/scanlines.css">
     <link rel="stylesheet" href="style/loom.css">
+    
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/loom.js"></script>
+    
+    <link rel="stylesheet" href="style/style.css">
     <title>[ LOOM://ROOT ]</title>
 </head>
 <body>
@@ -15,8 +21,20 @@
         <span>time</span>
     </div>
     <div id="env">
-        <div id="icons"></div>
-        <div id="windows"></div>
+        <div id="files">
+            <div class="fileline">
+                <div class="file" ondblclick="openPage('main.freckleskies.net', false)">
+                    <img src="/icons/main.png" alt="launch main">
+                    <p>launch main</p>
+                </div>
+                <div class="file" ondblclick="openWindow('freckleskies')">
+                    <img src="/icons/main.png" alt="window">
+                    <p>window test</p>
+                </div>
+            </div>
+            <div class="fileline">
+            </div>
+        </div>
     </div>
 </body>
 </html>

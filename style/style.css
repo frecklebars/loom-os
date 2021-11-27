@@ -1,0 +1,83 @@
+:root{
+    --main-white: #EAE7DE;
+	--main-black: #111111;
+	--purple: #694E7C;
+
+    --st-black: #111111f0;
+}
+
+.debug{
+    border: solid 1px red;
+}
+
+@font-face {
+    font-family: "courier prime";
+    src: url("fonts/CourierPrime-Regular.ttf");
+}
+
+@font-face {
+    font-family: "dos";
+    src: url("fonts/Px437_DOS-V_TWN16.ttf");
+}
+
+*{
+    cursor: crosshair;
+}
+
+*::selection{
+    color: var(--main-black);
+    background-color: var(--purple);
+}
+
+/* scrollbar shouldnt appear!*/
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+    background: var(--pruple);
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--main-white);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    
+    font-family: "courier prime";
+    font-size: 18px;
+    word-break: break-word;
+    
+    background-color: var(--main-black);
+    color: var(--main-white);
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.30)), url("/img/background.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+a {
+    color: var(--main-white);
+    background-color: var(--main-black);
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: var(--purple);
+}
+
+h1, h2, h3{
+    font-family: "dos";
+    letter-spacing: 2px;
+    font-weight: 400;
+    margin: 20px 0px;
+}
+
+h1 {
+    font-size: 3.5em;
+}
+

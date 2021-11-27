@@ -1,10 +1,91 @@
+.debug{
+    border: solid 1px red;
+}
 
 #statusbar{
     background-color: var(--main-black);
     width: 100vw;
+    height: 30px;
 
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
+}
+
+body{
+    overflow: hidden;
+}
+
+#files{
+    margin-top: 10px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    font-size: 0.8em;
+}
+
+.fileline{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: top;
+
+    margin: 15px 10px;
+}
+
+.file{
+    font-size: 1em;
+    margin: 0px 10px;
+    width: 64px;
+
+    align-items: center;
+}
+
+.file img{
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: 0px auto;
+}
+
+.file p{
+    width: 100%;
+    margin: 0px;
+    margin-top: 7px;
+
+    text-align: center;
+}
+
+.window{
+    position: relative;
+    width: 700px;
+    height: 500px;
+}
+
+.windowbar{
+    height: 25px;
+    background-color: var(--st-black);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.windowbar span{
+    padding: 0px 10px;
+}
+
+.winframe{
+    margin: 0px;
+    width: 100%;
+    height: calc(100% - 25px);
+}
+
+.winframe iframe{
+    width: 100%;
+    height: 100%;
 }
