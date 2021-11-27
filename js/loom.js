@@ -39,7 +39,7 @@ function openWindow(title, link=""){
         $(newWin).css("z-index", "1000");
 
 
-        topPos = -100 - 550 * (windowsIdCnt-1) + 30 * (windowsIdCnt-1);
+        topPos = 100 + 30 * (windowsIdCnt-1);
         leftPos = 400 + 30 * (windowsIdCnt-1);
 
         $(newWin).css("top", topPos);

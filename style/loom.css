@@ -61,7 +61,7 @@ body{
 }
 
 .window{
-    position: relative;
+    position: absolute;
     width: 800px;
     height: 550px;
 }
