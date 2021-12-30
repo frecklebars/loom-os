@@ -4,7 +4,6 @@ $(document).ready(function(){
 });
 
 windowsIdCnt = 0;
-zind = 0;
 
 function openPage(link, newTab=true){
     tab = "_self";
@@ -17,11 +16,20 @@ function openPage(link, newTab=true){
 function openWindow(title, link=""){
     switch (title) {
         case "fbash":
-            link = "fbash.html"
+            link = "/bin/fbash/"
             break;
         case "freckleskies":
             link = "https://freckleskies.net"
             break;
+        case "TODO":
+            link = "/files/TODO/"
+            break;
+        case "about":
+            link = "/files/about/"
+            break;
+        default:
+            // TODO add not found
+            return;
     }
 
     $.get("/win-template.html", function(response) {
@@ -39,8 +47,8 @@ function openWindow(title, link=""){
         $(newWin).css("z-index", "1000");
 
 
-        topPos = 100 + 30 * (windowsIdCnt-1);
-        leftPos = 400 + 30 * (windowsIdCnt-1);
+        topPos = 100 + 30 * (Math.floor((windowsIdCnt-1)/4)) + 30 * (windowsIdCnt-1);
+        leftPos = 300 + 30 * ((windowsIdCnt-1) % 4);
 
         $(newWin).css("top", topPos);
         $(newWin).css("left", leftPos);

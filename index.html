@@ -9,6 +9,7 @@
     
     <script src="/js/jquery-3.6.0.min.js"></script>
     <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/index.js"></script>
     <script src="/js/loom.js"></script>
     
     <link rel="stylesheet" href="style/style.css">
@@ -17,22 +18,33 @@
 <body>
     <div id="statusbar">
         <span>[ LOOM://ROOT ]</span>
-        <span>middletest</span>
-        <span>time</span>
+        <span id="time">time</span>
     </div>
     <div id="env">
         <div id="files">
             <div class="fileline">
                 <div class="file" ondblclick="openPage('main.freckleskies.net', false)">
-                    <img src="/icons/main.png" alt="launch main">
+                    <img src="/icons/main.png" alt="main">
                     <p>launch main</p>
                 </div>
-                <div class="file" ondblclick="openWindow('freckleskies')">
-                    <img src="/icons/main.png" alt="window">
-                    <p>window test</p>
+                <div class="file" ondblclick="openPage('freckleskies.net', false)">
+                    <img src="/icons/browser.png" alt="homepage">
+                    <p>homepage</p>
+                </div>
+                <div class="file" ondblclick="openWindow('fbash')">
+                    <img src="/icons/bash.png" alt="fbash">
+                    <p>fbash</p>
                 </div>
             </div>
             <div class="fileline">
+                <div class="file" ondblclick="openWindow('about')">
+                    <img src="/icons/book.png" alt="about">
+                    <p>about</p>
+                </div>
+                <div class="file" ondblclick="openWindow('TODO')">
+                    <img src="/icons/notepad.png" alt="TODO">
+                    <p>TODO</p>
+                </div>
             </div>
         </div>
     </div>

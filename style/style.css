@@ -1,9 +1,8 @@
 :root{
-    --main-white: #EAE7DE;
-	--main-black: #111111;
+    --main-light: #EAE7DE;
+	--main-dark: #111111;
+	--second-dark: #555555;
 	--purple: #694E7C;
-
-    --st-black: #111111f0;
 }
 
 .debug{
@@ -25,7 +24,7 @@
 }
 
 *::selection{
-    color: var(--main-black);
+    color: var(--main-dark);
     background-color: var(--purple);
 }
 
@@ -39,7 +38,7 @@
 }
 
 ::-webkit-scrollbar-thumb{
-    background: var(--main-white);
+    background: var(--main-light);
 }
 
 body{
@@ -50,8 +49,8 @@ body{
     font-size: 18px;
     word-break: break-word;
     
-    background-color: var(--main-black);
-    color: var(--main-white);
+    background-color: var(--main-dark);
+    color: var(--main-light);
 
     background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.30)), url("/img/background.png");
     background-size: cover;
@@ -60,8 +59,8 @@ body{
 }
 
 a {
-    color: var(--main-white);
-    background-color: var(--main-black);
+    color: var(--main-light);
+    background-color: var(--main-dark);
     padding: 10px 15px;
     text-decoration: none;
 }
