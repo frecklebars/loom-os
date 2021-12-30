@@ -40,7 +40,7 @@ function parseCommand(inln){
         default:
             unrecognisedCommand(commands[0]);
     }
-
+    
     scrollToBottom();
 }
 

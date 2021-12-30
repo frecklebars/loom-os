@@ -3,7 +3,8 @@ $(document).ready(function(){
     
 });
 
-windowsIdCnt = 0;
+windowsId = 0;
+winCnt = 0;
 
 function openPage(link, newTab=true){
     tab = "_self";
@@ -13,32 +14,21 @@ function openPage(link, newTab=true){
     window.open("https\:\/\/" + link, tab);
 }
 
-function openWindow(title, link=""){
-    switch (title) {
-        case "fbash":
-            link = "/bin/fbash/"
-            break;
-        case "freckleskies":
-            link = "https://freckleskies.net"
-            break;
-        case "TODO":
-            link = "/files/TODO/"
-            break;
-        case "about":
-            link = "/files/about/"
-            break;
-        default:
-            // TODO add not found
-            return;
-    }
-
+function openWindow(win, link=""){
+    
+    winData = getWinData(win);
+    if(winData == "not_found") return;
+    
     $.get("/win-template.html", function(response) {
         newWin = $.parseHTML(response);
-        winID = ++windowsIdCnt;
+        winID = ++windowsId;
+        winCnt++;
 
         $(newWin).attr("id", "window-"+winID);
-        $(newWin).find(".win-title").html(title);
-        $(newWin).find(".winframe > iframe").attr("src", link);
+        $(newWin).css("width", winData["width"]);
+        $(newWin).css("height", winData["height"]);
+        $(newWin).find(".win-title").html(winData["title"]);
+        $(newWin).find(".winframe > iframe").attr("src", winData["link"]);
         $(newWin).find(".close-win").attr("onclick", "closeWindow("+winID+")");
 
         $("#env").append(newWin);
@@ -47,8 +37,8 @@ function openWindow(title, link=""){
         $(newWin).css("z-index", "1000");
 
 
-        topPos = 100 + 30 * (Math.floor((windowsIdCnt-1)/4)) + 30 * (windowsIdCnt-1);
-        leftPos = 300 + 30 * ((windowsIdCnt-1) % 4);
+        topPos = 50 + 10 * (Math.floor((winCnt-1) / 8)) + 15 * (winCnt-1);
+        leftPos = 300 + 30 * ((winCnt-1) % 8);
 
         $(newWin).css("top", topPos);
         $(newWin).css("left", leftPos);
@@ -67,10 +57,52 @@ function openWindow(title, link=""){
 
 function closeWindow(id){
     $("#window-"+id).remove();
+    winCnt--;
 }
 
 function _makeAllDraggable(){
     $(".window").draggable({
         handle: ".windowbar"
     })
+}
+
+
+function getWinData(win){
+    // defaults
+    wwidth = "800px";
+    wheight = "550px";
+
+    switch (win) {
+        case "fbash":
+            link = "/bin/fbash/"
+            title = "fbash"
+            break;
+
+        //case "freckleskies":
+        //    link = "https://freckleskies.net"
+        //    break;
+
+        case "TODO":
+            link = "/files/TODO/"
+            title = "/files/TODO.md"
+            wwidth = "500px"
+            break;
+
+        case "about":
+            link = "/files/about/"
+            title = "/files/about.md"
+            break;
+            
+        default:
+            // TODO add not found
+            return "not_found";
+    }
+
+    wd = {
+        "link": link,
+        "title": "LOOM://" + title,
+        "width": wwidth,
+        "height": wheight
+    }
+    return wd;
 }
