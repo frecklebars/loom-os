@@ -1,0 +1,37 @@
+center *::selection,
+h1::selection,
+h2::selection{
+    background-color: transparent;
+    color: inherit;
+}
+
+.inout{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+
+    align-items: center;
+}
+
+.inout textarea{
+    width: 300px;
+    height: 380px;
+
+    resize: none;
+}
+
+.tolackey-mode{
+    padding: 5px 10px;
+}
+
+.tolackey-mode:hover{
+    color: var(--purple);
+}
+
+.active-mode{
+    background-color: var(--purple);
+}
+
+.tolackey-mode.active-mode:hover{
+    color: inherit;
+}

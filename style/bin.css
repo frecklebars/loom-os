@@ -1,0 +1,15 @@
+body{
+    margin: 2px 5px 5px 10px;
+    padding: 0;
+
+    font-size: 14px;
+
+    background-color: var(--main-dark);
+    color: var(--main-light);
+
+    background-image: none;
+} 
+
+::-webkit-scrollbar{
+    background-color: var(--main-dark);
+}

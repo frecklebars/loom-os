@@ -4,13 +4,18 @@
 
 #statusbar{
     background-color: var(--main-dark);
-    width: 100vw;
-    height: 30px;
+    width: calc(100vw - 10px);
+    height: 25px;
+
+    z-index: 2000;
+    position: relative;
 
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+
+    border: ridge 5px var(--second-dark);
 }
 
 #statusbar span{
@@ -70,7 +75,11 @@ body{
     height: 550px;
     padding-bottom: 4px;
 
-    border: ridge 5px var(--second-dark);
+    border: ridge 8px var(--second-dark);
+}
+
+.active-window{
+    border: ridge 8px var(--purple);
 }
 
 .windowbar{
@@ -82,6 +91,10 @@ body{
     justify-content: space-between;
     align-items: center;
     border-bottom: ridge 5px var(--second-dark);
+}
+
+.active-window .windowbar{
+    border-bottom: ridge 5px var(--purple);
 }
 
 .windowbar span{
@@ -97,4 +110,9 @@ body{
 .winframe iframe{
     width: 100%;
     height: 100%;
+}
+
+.close-win::selection{
+    color: inherit;
+    background-color: transparent;
 }
